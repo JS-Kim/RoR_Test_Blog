@@ -1,0 +1,13 @@
+<% @post.tags.build %>
+
+<%= form.fields_for :tags do |f| %>
+	<div class="field">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+
+	<% if f.object.persisted? %>
+		<%= f.label :_destroy %>
+		<%= f.check_box :_destroy %>
+	<% end %>
+	</div>
+<% end %>
